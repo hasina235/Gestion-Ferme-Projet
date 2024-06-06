@@ -1,0 +1,589 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+:root {
+  --primaryColor: hsl(94, 55%, 56%);
+  --bgimagecolor: hsl(90, 55%, 70%);
+  --hoverColor: hsl(93, 75%, 76%);
+  --paleGreen: hsl(96, 75%, 89%);
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(0, 0%, 18%);
+  --greyText: hsl(0, 0%, 75%);
+  --bgColor: hsl(113, 11%, 85%);
+  --inputColor: hsl(330, 12%, 97%);
+  --biggestFontSize: 2.5rem;
+  --h1FontSize: 1.5rem;
+  --h2FontSize: 1.25rem;
+  --h3FontSize: 1rem;
+  --normalFontSize: .938rem;
+  --smallFontSize: .813rem;
+  --smallestFontSize: .75rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+html {
+  font-size: 90%;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.icon {
+  font-size: var(--h2FontSize);
+  cursor: pointer;
+}
+
+img, video {
+  height: auto;
+  width: 100%;
+}
+
+.message {
+  display: none;
+}
+
+.showMessage {
+  display: block;
+  color: var(--whiteColor);
+  padding: 10px;
+  background: rgb(255, 0, 0);
+  border-radius: 3px;
+  text-align: center;
+}
+
+.showMessage {
+  display: block;
+  color: var(--whiteColor);
+  background: rgb(255, 0, 0);
+  border-radius: 3px;
+  text-align: center;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  color: var(--greyText);
+}
+
+.btn .icon {
+  margin-left: 0.5rem;
+}
+
+.btn:hover {
+  color: var(--primaryColor);
+  background: var(--paleGreen);
+}
+
+.loginPage, .registerPage {
+  height: 100vh;
+  width: 100%;
+  margin: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 7px 50px rgb(214, 223, 213);
+}
+.loginPage .container, .registerPage .container {
+  height: 75vh;
+  width: 60%;
+  margin: auto;
+  justify-content: space-between;
+  border-radius: 10px;
+  background: hsl(0, 0%, 91%);
+}
+.loginPage .container .videoDiv, .registerPage .container .videoDiv {
+  position: relative;
+  display: flex;
+  flex-basis: 50%;
+  width: 70%;
+  height: 100%;
+  padding: 0 1.5rem;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.loginPage .container .videoDiv video, .loginPage .container .videoDiv .footerDiv, .registerPage .container .videoDiv video, .registerPage .container .videoDiv .footerDiv {
+  position: absolute;
+}
+.loginPage .container .videoDiv video, .registerPage .container .videoDiv video {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.loginPage .container .videoDiv .textDiv, .registerPage .container .videoDiv .textDiv {
+  position: relative;
+}
+.loginPage .container .videoDiv .textDiv .title, .registerPage .container .videoDiv .textDiv .title {
+  color: var(--whiteColor);
+  font-size: 35px;
+  font-weight: 800;
+}
+.loginPage .container .videoDiv .textDiv p, .registerPage .container .videoDiv .textDiv p {
+  color: var(--whiteColor);
+  padding: 1rem;
+  font-weight: 400;
+}
+.loginPage .container .videoDiv .footerDiv, .registerPage .container .videoDiv .footerDiv {
+  bottom: 10px;
+  padding: 0 1rem;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.248);
+  left: 10px;
+  right: 10px;
+  justify-content: space-between;
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  border-radius: 10px;
+}
+.loginPage .container .videoDiv .footerDiv .text, .registerPage .container .videoDiv .footerDiv .text {
+  color: var(--whiteColor);
+}
+.loginPage .container .videoDiv .footerDiv .btn, .registerPage .container .videoDiv .footerDiv .btn {
+  background: var(--whiteColor);
+  color: var(--primaryColor);
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 400;
+  transition: 0.3s ease;
+}
+.loginPage .container .videoDiv .footerDiv .btn:hover, .registerPage .container .videoDiv .footerDiv .btn:hover {
+  background: var(--hoverColor);
+  color: var(--blackColor);
+}
+.loginPage .container .formDiv, .registerPage .container .formDiv {
+  flex-basis: 50%;
+  margin: auto;
+  flex-direction: column;
+  gap: 1.5rem;
+  transform: translateY(-1rem);
+}
+.loginPage .container .formDiv .headerDiv, .registerPage .container .formDiv .headerDiv {
+  text-align: center;
+  padding: 1.5rem;
+}
+.loginPage .container .formDiv .headerDiv img, .registerPage .container .formDiv .headerDiv img {
+  width: 60px;
+  padding-bottom: 0.5rem;
+}
+.loginPage .container .formDiv .headerDiv h3, .registerPage .container .formDiv .headerDiv h3 {
+  font-size: 25px;
+  color: var(--blackColor);
+  font-weight: 600;
+}
+.loginPage .container .formDiv .form, .registerPage .container .formDiv .form {
+  gap: 1rem;
+}
+.loginPage .container .formDiv .form .inputDiv .icon, .registerPage .container .formDiv .form .inputDiv .icon {
+  color: var(--greyText);
+}
+.loginPage .container .formDiv .form .inputDiv input, .registerPage .container .formDiv .form .inputDiv input {
+  background: none;
+  outline: none;
+  border: none;
+  width: 200px;
+}
+.loginPage .container .formDiv .form .inputDiv label, .registerPage .container .formDiv .form .inputDiv label {
+  color: var(--blackColor);
+  font-weight: 400;
+  font-size: 14px;
+  padding: 0.5rem 0;
+  display: block;
+}
+.loginPage .container .formDiv .form .inputDiv .input, .registerPage .container .formDiv .form .inputDiv .input {
+  gap: 0.5rem;
+  padding: 1rem;
+  background: var(--inputColor);
+  border-radius: 10px;
+}
+.loginPage .container .formDiv .form .btn, .registerPage .container .formDiv .form .btn {
+  padding: 0.8rem;
+  background: var(--primaryColor);
+  border-radius: 10px;
+  color: var(--whiteColor);
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  font-size: 16px;
+  width: 100%;
+  gap: 0.5rem;
+  transition: 0.3s ease;
+}
+.loginPage .container .formDiv .form .btn .icon, .registerPage .container .formDiv .form .btn .icon {
+  font-size: 25px;
+  transition: 0.3s ease;
+}
+.loginPage .container .formDiv .form .btn:hover, .registerPage .container .formDiv .form .btn:hover {
+  background: var(--hoverColor);
+  color: var(--blackColor);
+}
+.loginPage .container .formDiv .form .btn:hover .icon, .registerPage .container .formDiv .form .btn:hover .icon {
+  color: var(--blackColor);
+  transform: translateX(5px);
+}
+.loginPage .container .formDiv .form .forgotPassword, .registerPage .container .formDiv .form .forgotPassword {
+  font-size: 13px;
+  color: var(--blackColor);
+  opacity: 0.7;
+  text-align: center;
+}
+.loginPage .container .formDiv .form .forgotPassword a, .registerPage .container .formDiv .form .forgotPassword a {
+  text-decoration: underline;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.dashboard {
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  margin: auto;
+}
+.dashboard .dashboardContainer {
+  height: 95vh;
+  width: 95%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgb(180, 180, 180);
+}
+.dashboard .dashboardContainer .sidebar {
+  width: 20%;
+  height: 100%;
+  flex-direction: column;
+  padding: 5px 20px 20px 20px;
+}
+.dashboard .dashboardContainer .sidebar .logo img {
+  width: 45px;
+  margin-right: 5px;
+}
+.dashboard .dashboardContainer .sidebar .logo nav {
+  color: var(--primaryColor);
+  font-size: 28px;
+}
+.dashboard .dashboardContainer .sidebar .navItem {
+  padding-bottom: 75px;
+}
+.dashboard .dashboardContainer .sidebar .navItem h2 {
+  font-size: var(--h2FontSize);
+  color: var(--blackColor);
+  padding-top: 28px;
+  padding-bottom: 15px;
+}
+.dashboard .dashboardContainer .sidebar .navItem ul, .dashboard .dashboardContainer .sidebar .navItem li, .dashboard .dashboardContainer .sidebar .navItem a {
+  color: var(--greyText);
+  margin-bottom: 15px;
+}
+.dashboard .dashboardContainer .sidebar .navItem a:hover {
+  color: var(--primaryColor);
+  border: none;
+  outline: none;
+}
+.dashboard .dashboardContainer .sidebar .btn {
+  padding: 0.8rem;
+  background: var(--primaryColor);
+  border-radius: 10px;
+  color: var(--whiteColor);
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  font-size: 14px;
+  width: 100%;
+  gap: 0.5rem;
+  transition: 0.3s ease;
+}
+.dashboard .dashboardContainer .sidebar .btn .icon {
+  font-size: 25px;
+  transition: 0.3s ease;
+}
+.dashboard .dashboardContainer .sidebar .btn:hover {
+  background: var(--hoverColor);
+  color: var(--blackColor);
+}
+.dashboard .dashboardContainer .sidebar .btn:hover .icon {
+  color: var(--blackColor);
+  transform: translateX(-5px);
+}
+.dashboard .dashboardContainer .sidebar .help-center {
+  width: 100%;
+  height: 75px;
+  margin-top: 20px;
+  border-radius: 8px;
+  text-align: center;
+  background: var(--bgColor);
+}
+.dashboard .dashboardContainer .body {
+  width: 100%;
+  height: 100%;
+  background: var(--bgColor);
+}
+.dashboard .dashboardContainer .body .navbar {
+  justify-content: space-between;
+  margin: 10px 15px 10px 15px;
+  height: 75px;
+}
+.dashboard .dashboardContainer .body .navbar .welcome {
+  display: flex;
+  flex-direction: column;
+}
+.dashboard .dashboardContainer .body .navbar .welcome .bienvennu {
+  font-size: var(--h1FontSize);
+  color: var(--blackColor);
+}
+.dashboard .dashboardContainer .body .navbar .welcome .bonjour {
+  color: var(--greyText);
+}
+.dashboard .dashboardContainer .body .navbar .search {
+  background: var(--whiteColor);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgb(180, 180, 180);
+}
+.dashboard .dashboardContainer .body .navbar .search .icon {
+  color: var(--greyText);
+  margin-right: 10px;
+}
+.dashboard .dashboardContainer .body .navbar .search input {
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  height: 40px;
+  padding: 5px 5px;
+}
+.dashboard .dashboardContainer .body .navbar .search input::-moz-placeholder {
+  color: var(--greyText);
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+}
+.dashboard .dashboardContainer .body .navbar .search input::placeholder {
+  color: var(--greyText);
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+}
+.dashboard .dashboardContainer .body .navbar .user-container .notification-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 40%;
+  background: var(--whiteColor);
+  margin-right: 10px;
+}
+.dashboard .dashboardContainer .body .navbar .user-container .image-user {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--blackColor);
+  margin-right: 5px;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgb(180, 180, 180);
+}
+.dashboard .dashboardContainer .body .container-change .lineVideo {
+  margin-bottom: 15px;
+}
+.dashboard .dashboardContainer .body .container-change .lineVideo .video-grid video, .dashboard .dashboardContainer .body .container-change .lineVideo .video-grid img {
+  width: 600px;
+  height: 180px;
+  left: 0;
+  right: 0;
+  background: var(--bgimagecolor);
+  border-radius: 10px;
+  position: relative;
+  margin: 0 20px 0;
+  text-align: center;
+}
+.dashboard .dashboardContainer .body .container-change .lineVideo .video-grid span, .dashboard .dashboardContainer .body .container-change .lineVideo .video-grid .textH {
+  position: absolute;
+  flex-direction: column;
+  margin: 0 50px 50px;
+  color: var(--whiteColor);
+  font-size: var(--h1FontSize);
+  text-align: center;
+  margin-bottom: 20px;
+}
+.dashboard .dashboardContainer .body .container-change .lineVideo .video-grid span .proposal, .dashboard .dashboardContainer .body .container-change .lineVideo .video-grid .textH .proposal {
+  color: var(--whiteColor);
+  font-size: var(--normalFontSize);
+  margin-bottom: 20px;
+}
+.dashboard .dashboardContainer .body .container-change .lineVideo .video-grid span .button, .dashboard .dashboardContainer .body .container-change .lineVideo .video-grid .textH .button {
+  margin-bottom: 20px;
+}
+.dashboard .dashboardContainer .body .container-change .lineVideo .video-grid span .button .explore, .dashboard .dashboardContainer .body .container-change .lineVideo .video-grid .textH .button .explore {
+  margin-right: 25px;
+}
+.dashboard .dashboardContainer .body .container-change .lineVideo .video-grid span .button .shell, .dashboard .dashboardContainer .body .container-change .lineVideo .video-grid .textH .button .shell {
+  outline: none;
+  border: 1px solid;
+  background: transparent;
+}
+.dashboard .dashboardContainer .body .container-change .lineVideo .video-grid img {
+  border-radius: 10px;
+  width: 250px;
+  height: 180px;
+  position: relative;
+}
+.dashboard .dashboardContainer .body .container-change .lineVideo .video-grid .text-eggs {
+  position: absolute;
+  padding-left: 675px;
+  padding-bottom: 90px;
+  color: var(--blackColor);
+  font-size: var(--h1FontSize);
+}
+.dashboard .dashboardContainer .body .container-change .lineVideo .video-grid .text-stat-today {
+  position: absolute;
+  color: var(--whiteColor);
+  padding-left: 675px;
+  padding-bottom: 30px;
+}
+.dashboard .dashboardContainer .body .container-change .lineVideo .video-grid .value-stat-today {
+  position: absolute;
+  padding-left: 675px;
+  padding-top: 20px;
+  color: var(--primaryColor);
+}
+.dashboard .dashboardContainer .body .container-change .lineVideo .video-grid .text-stat-thisMonth {
+  position: absolute;
+  color: var(--whiteColor);
+  padding-left: 775px;
+  padding-bottom: 30px;
+}
+.dashboard .dashboardContainer .body .container-change .lineVideo .video-grid .value-stat-thisMonth {
+  position: absolute;
+  color: var(--primaryColor);
+  padding-left: 775px;
+  padding-top: 20px;
+}
+.dashboard .dashboardContainer .body .container-change .card-product {
+  width: 600px;
+  height: 220px;
+  margin: 0 20px 0;
+  background: var(--bgColor);
+}
+.dashboard .dashboardContainer .body .container-change .card-product .header {
+  justify-content: space-between;
+}
+.dashboard .dashboardContainer .body .container-change .card-product .header .button-see-all .btn {
+  padding: 0.4rem;
+  background: var(--bgColor);
+  border-radius: 10px;
+  color: var(--greyText);
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  font-size: 14px;
+  width: 100%;
+  gap: 0.5rem;
+  transition: 0.3s ease;
+}
+.dashboard .dashboardContainer .body .container-change .card-product .header .button-see-all .btn .icon {
+  font-size: 22px;
+  transition: 0.3s ease;
+}
+.dashboard .dashboardContainer .body .container-change .card-product .header .button-see-all .btn:hover {
+  background: var(--hoverColor);
+  color: var(--whiteColor);
+}
+.dashboard .dashboardContainer .body .container-change .card-product .header .button-see-all .btn:hover .icon {
+  color: var(--whiteColor);
+  transform: translateX(5px);
+}
+.dashboard .dashboardContainer .body .container-change .card-product .card {
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.dashboard .dashboardContainer .body .container-change .card-product .card .card1 {
+  width: 120px;
+  height: 150px;
+  margin: 0 10px 0;
+  background: var(--greyText);
+  border-radius: 8px;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 5px 5px rgb(184, 184, 184);
+}
+.dashboard .dashboardContainer .body .container-change .card-product .card .card1 .name {
+  margin-top: 120px;
+}
+.dashboard .dashboardContainer .body .container-change .card-product .card .card1:hover {
+  transform: translateX(1px);
+}
+.dashboard .dashboardContainer .body .container-change .card-product .Last-Product-inserted h3 {
+  font-size: var(--h2FontSize);
+}
+.dashboard .dashboardContainer .body .container-change .card-product .Last-Product-inserted .table-product {
+  background: var(--greyText);
+  width: 100%;
+  height: 100px;
+  border-radius: 10px;
+}
+
+.item-product .table-list-products {
+  width: 60%;
+  height: 350px;
+  background: var(--whiteColor);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgb(184, 184, 184);
+  margin: 0 20px 0;
+}
+.item-product .table-list-products .table-header {
+  color: var(--blackColor);
+}
+.item-product .form-insert-products {
+  width: 40%;
+  height: 350px;
+  margin: 0 2px 0;
+  border-radius: 10px;
+  padding: 0 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgb(184, 184, 184);
+  background: var(--whiteColor);
+}
+.item-product .form-insert-products h3 {
+  color: var(--primaryColor);
+  text-align: center;
+  font-size: var(--h2FontSize);
+}
+.item-product .form-insert-products label {
+  color: var(--blackColor);
+  font-size: 16px;
+}
+.item-product .form-insert-products input {
+  border: none;
+  width: 100%;
+  outline: none;
+  border-radius: 10px;
+  height: 40px;
+  font-size: 16px;
+  padding: 5px 5px;
+  background: var(--paleGreen);
+}/*# sourceMappingURL=App.css.map */
