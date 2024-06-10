@@ -40,11 +40,12 @@ const Products = () => {
       <div className="item-product flex">
       <div className="table-list-products">
         <table>
-          <tr>
+          <thead>
             <th className='table-header'>Name</th>
             <th className='table-header'>Description</th>
             <th className='table-header'>Price</th>
-          </tr>
+          </thead>
+          <tbody>
             {products.map((product) =>(
               <tr>
                 <td className='table-body'><div key={product.nomProduit}>{ product.nomProduit }</div></td>
@@ -52,6 +53,7 @@ const Products = () => {
                 <td className='table-body'><div key={product.prix}>{ product.prix }</div></td>
               </tr>
             ))}
+          </tbody>
         </table>
       </div>
 

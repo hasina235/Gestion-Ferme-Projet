@@ -43,7 +43,7 @@ const Body = () => {
             </div>
 
             <div className="container-change">
-                <Products></Products>
+                <Dashboards></Dashboards>
             </div>
             
 
