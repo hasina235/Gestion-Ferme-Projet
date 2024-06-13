@@ -1,0 +1,104 @@
+:root {
+    --primaryColor: hsl(94, 59%, 35%);
+    --hoverColor: #bdf094;
+    --paleGreen: hsl(96, 75%, 89%);
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(0, 0%, 18%);
+    --textColor: hsl(240, 1%, 48%);
+    --greyText: rgb(190, 190, 190);
+    --bgColor: hsl(220, 10%, 94%);
+    --inputColor: hsl(330, 12%, 97%);
+    --tundraGray: #6d7676;
+  
+  
+    --biggestFontSize: 2.5rem;
+    --h1FontSize: 1.5rem;
+    --h2FontSize: 1.25rem;
+    --h3FontSize: 1rem;
+    --normalFontSize: .938rem;
+    --smallFontSize: .813rem;
+    --smallestFontSize: .75rem;
+  }
+
+  .content{
+    .header{
+        
+        h1{
+            font-size: var(--h1FontSize);
+        }
+
+        button{
+            justify-content: end;
+        }
+    }
+
+    .table-animals{
+        width: 800px;
+        height: 300px;
+        background: var(--whiteColor);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 2px var(--whiteColor);
+        padding: 1rem 1rem;
+        text-align: center;
+        justify-content: space-between;
+
+        .table{
+            position: relative;
+            width: 300px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 1rem;
+            margin: .5rem;
+            border-radius: 10px;
+            background: var(--itemCardColor);
+
+            h2{
+                width: 100%;
+                background: var(--hoverColor);
+                margin-bottom: 1rem;
+            }
+
+            table, thead, th, td{
+                width: 50%;
+                text-align: center;
+                padding: .2rem;
+                border-radius: 10px;
+            }
+            
+        }
+    }
+
+    .table-visualisation-animals{
+        width: 800px;
+        height: 200px;
+        margin-top: 1rem;
+        background: var(--whiteColor);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 2px var(--whiteColor);
+        padding: 1rem 1rem;
+        text-align: center;
+        justify-content: space-between;
+        
+        .head{
+            width: 100%;
+            background: var(--hoverColor);
+
+            h1{
+                font-size: var(--h2FontSize);
+            }
+
+        }
+
+        .card-visuel{
+            display: flex;
+            flex-direction: column;
+            padding-top: 3rem;
+        }
+
+        
+    }
+  }

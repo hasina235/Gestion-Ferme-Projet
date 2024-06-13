@@ -9,10 +9,17 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        type: {
-            type: DataTypes.STRING, //"betail" ou "volail"
+        categorie: {
+            type: DataTypes.STRING, //"bovin" ou "porcin" ou "volail"
             allowNull: false,
         },
-    })
+    });
+
+    Animals.associate = (models) => {
+        Animals.hasOne(models.Ferme,{
+            foreignKey: 'numFerme',
+            onDelete: 'CASCADE',
+        })
+    }
     return Animals;
 }

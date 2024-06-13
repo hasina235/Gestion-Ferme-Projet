@@ -1,23 +1,14 @@
-import React from 'react';
-
-import Sidebar from './Sidebar/Sidebar';
-import Body from './Body/Body';
-import '../../App.css';
-
-
+import React from 'react'
+import { Router } from 'react-router-dom';
+import Sidebar from '../Dashboard/Components/Sidebar Section/Sidebar';
+import Body from '../Dashboard/Components/Body Section/Body';
 
 const Dashboard = () => {
-  
   return (
-
-    <div className="dashboard flex">
-        <div className="dashboardContainer flex">
-          <Sidebar />
-          <Body />
-          
-        </div>
+    <div className="container">
+      <Sidebar />
+        <Body />
     </div>
-
   )
 }
 

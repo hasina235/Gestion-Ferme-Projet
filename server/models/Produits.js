@@ -1,45 +1,29 @@
 
-const Mammifere = require('../models/Mammifere');
-const Oiseau = require('../models/Oiseau');
+const Animals = require('../models/Animals');
 
 module.exports = (sequelize, DataTypes) => {
     const Produits = sequelize.define("Produits", {
-        // sourceId: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: Mammifere,
-        //         model: Oiseau,
-        //         key: Mammifere.idAnimal,
-        //         key: Oiseau.idAnimal,
-        //     },
-        // },
         nomProduit: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        description: {
-            type: DataTypes.STRING,
+        typeProduit: {
+            type: DataTypes.STRING, //"lait" ou "viande" ou "oeufs"
             allowNull: false,
         },
-        prix: {
-            type: DataTypes.FLOAT,
+        description: {
+            type: DataTypes.STRING, // viande de porc
+            allowNull: false,
+        },
+        dateProduction: {
+            type: DataTypes.DATE,
             allowNull: false,
         }
     });
     
     Produits.associate = (models) => {
-        Produits.belongsTo(models.Mammifere, {
-            foreignKey: 'sourceId',
-            constraints: false,
-            as: 'mammiferes'
-        });
-        Produits.belongsTo(models.Oiseau, {
-            foreignKey: 'sourceId',
-            constraints: false,
-            as: 'oiseaux'
-        });
-        Produits.hasOne(models.Stocks, {
-            foreignKey: 'produitId',
+        Produits.hasOne(models.Animals, {
+            foreignKey: 'idAnimal',
             onDelete: 'CASCADE'
         });
     };

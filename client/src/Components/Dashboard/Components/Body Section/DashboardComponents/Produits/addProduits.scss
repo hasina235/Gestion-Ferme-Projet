@@ -1,0 +1,55 @@
+:root {
+    --primaryColor: hsl(94, 59%, 35%);
+    --hoverColor: #bdf094;
+    --paleGreen: hsl(96, 75%, 89%);
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(0, 0%, 18%);
+    --textColor: hsl(240, 1%, 48%);
+    --greyText: rgb(190, 190, 190);
+    --bgColor: hsl(220, 10%, 94%);
+    --inputColor: hsl(330, 12%, 97%);
+    --tundraGray: #6d7676;
+  
+  
+    --biggestFontSize: 2.5rem;
+    --h1FontSize: 1.5rem;
+    --h2FontSize: 1.25rem;
+    --h3FontSize: 1rem;
+    --normalFontSize: .938rem;
+    --smallFontSize: .813rem;
+    --smallestFontSize: .75rem;
+  }
+
+  .card-form{
+    form{
+        width: 800px;
+        height: 280px;
+        background: var(--whiteColor);
+        padding: 1rem 1rem;
+        border-radius: 10px;
+        margin-top: 1rem;
+
+        label{
+            display: flex;
+            font-size: var(--h3FontSize);
+        }
+        input{
+            width:100%;
+            height:25px;
+            margin: .3rem;
+            
+        }
+
+        h2{
+            font-size: var(--h2FontSize);
+        }
+
+        .button-action{
+            margin-top: 1rem;
+            margin-left: 680px;
+            
+        }
+
+
+    }
+  }

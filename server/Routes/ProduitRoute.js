@@ -16,13 +16,14 @@ router.post('/', async (req, res) => {
 });
 
 router.put('/update/:id', async (req, res) => {
-    const {nomProduit, description, prix, sourceId} = req.body;
+    const {nomProduit,typeProduit, description, dateProduction} = req.body;
 
     const id = req.params.id;
     await Produits.update({
         nomProduit: nomProduit,
+        typeProduit: typeProduit,
         description: description,
-        prix: prix,
+        dateProduction: dateProduction,
     },
     {
         where: {

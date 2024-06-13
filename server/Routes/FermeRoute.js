@@ -16,10 +16,10 @@ router.post('/' , async (req, res) => {
 })
 
 router.put('/update/:numFerme', async (req, res) =>{
-    const { adresse} = req.body;
+    const { nom, adresse} = req.body;
     const numFerme = req.params.numFerme;
 
-    await Ferme.update({numFerme: numFerme, adresse: adresse},
+    await Ferme.update({numFerme: numFerme,nom: nom, adresse: adresse},
         {where: {numFerme: numFerme}});
     res.json({adresse});
 })

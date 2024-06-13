@@ -15,12 +15,12 @@ router.post('/', async (req, res) => {
 });
 
 router.put('/update/:idAnimal', async(req, res)=>{
-    const {nom, type} = req.body;
+    const {nom, categorie} = req.body;
 
     const idAnimal = req.params.idAnimal;
     await Animals.update({
         nom: nom,
-        type: type
+        categorie: categorie
     },{
         where: {idAnimal: idAnimal}
     });

@@ -3,7 +3,7 @@ import './Login.css'
 import '../../App.css'
 import axios from 'axios';
 
-import video from '../../LoginAssets/videoFerme2.mp4';
+import video from '../../LoginAssets/videoboeuf.mp4';
 import logo from '../../LoginAssets/logo2.png'
 import { Link, json, useNavigate } from 'react-router-dom';
 
@@ -60,14 +60,16 @@ useEffect(() => {
                 <video src={video} autoPlay muted loop></video>
 
                 <div className="textDiv">
-                    <h2 className='title'>Text to introduce ferme</h2>
-                    <p>a comment for ferme!</p>
+                    <h2 className='title'>Bienvennue à notre ferme</h2>
+                    <p>où nous élevons avec passions des animaux en plain aire pour vous
+                        offrir des produits d'une qualité exceptionnelle.
+                    </p>
                 </div>
 
                 <div className="footerDiv flex">
-                    <span className="text">Don't have an account?</span>
+                    <span className="text">Vous n'avez pas de compte?</span>
                     <Link to={'/register'}>
-                        <button className='btn'>Sign Up</button>
+                        <button className='btn'>S'inscrire</button>
                     </Link>
                 </div>
 
@@ -77,35 +79,35 @@ useEffect(() => {
             <div className="formDiv flex">
                     <div className="headerDiv">
                         <img src={logo} alt="Logo Image" />
-                        <h3>Welcome Back!</h3>
+                        <h3>Bienvennu</h3>
                     </div>
 
                     <form onSubmit={ (e) => onSubmit(e) } className='form grid'>
                         <span className={ statusHolder}>{ loginStatus }</span>
                         <div className="inputDiv">
-                            <label htmlFor="username">Username</label>
+                            <label htmlFor="username">Nom d'utilisateur</label>
                             <div className="input flex">
                                 <FaUserShield className='icon'/>
-                                <input type="username" id='username' name='username' placeholder='Enter Username'
+                                <input type="username" id='username' name='username' placeholder='utilisateur'
                                 onChange={ (e) => setUsername(e.target.value) }/>
                             </div>
                         </div>
 
                         <div className="inputDiv">
-                            <label htmlFor="password">Password</label>
+                            <label htmlFor="password">Mot de passe</label>
                             <div className="input flex">
                                 <BsFillShieldLockFill className='icon'/>
-                                <input type="password" id='password' name='password' placeholder='Enter Password'
+                                <input type="password" id='password' name='password' placeholder='mot de passe'
                                 onChange={ (e) => setPassword(e.target.value) }/>
                             </div>
                         </div>
 
                         <button type='submit' className='btn flex'>
-                            <span>Login</span>
+                            <span>Se connecter</span>
                             <AiOutlineSwapRight className='icon'/>
                         </button>
                         <span className='forgotPassword'>
-                            Forgot your password? <a href="">Click Here</a>
+                            Mot de passe oublié? <a href="">Cliquez-ici</a>
                         </span>
                         
                     </form>

@@ -629,4 +629,28 @@ img, video {
   .loginPage .container .formDiv .form .inputDiv .input, .registerPage .container .formDiv .form .inputDiv .input {
     width: 100%;
   }
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 1rem;
+}
+
+.container {
+  position: relative;
+  width: 95vw;
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bgColor);
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 8px var(--greyText);
+}
+
+::-webkit-scrollbar {
+  display: none;
 }/*# sourceMappingURL=App.css.map */
