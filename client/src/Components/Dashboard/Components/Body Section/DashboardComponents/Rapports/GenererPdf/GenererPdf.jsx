@@ -31,7 +31,7 @@ const GenererPdf = ({data}) => {
         // Add Chapter Body
         let bodyText = '';
         data.forEach(product => {
-          bodyText += `Produit: ${product.nomProduit}, type: ${product.typeProduit}, Description: ${product.description} Date de Production: ${product.dateProduction}\n`;
+          bodyText += `Produit: ${product.nomProduit}, type: ${product.typeProduit}, Description: ${product.description}, Date de Production: ${product.dateProduction}\n`;
         });
     
         const bodyLines = bodyText.split('\n');

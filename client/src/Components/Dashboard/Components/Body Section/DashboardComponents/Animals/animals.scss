@@ -74,7 +74,7 @@
     .table-visualisation-animals{
         width: 800px;
         height: 200px;
-        margin-top: 1rem;
+        margin-bottom: 1rem;
         background: var(--whiteColor);
         border-radius: 8px;
         overflow: hidden;
@@ -93,10 +93,21 @@
 
         }
 
-        .card-visuel{
-            display: flex;
-            flex-direction: column;
-            padding-top: 3rem;
+
+        .style{
+            width: 100%;
+
+            thead{
+                background: var(--tundraGray);
+                height: 25px;
+            }
+            
+            .delete{
+                color: red;
+            }
+            .update{
+                color: rgb(220, 235, 9);
+            }
         }
 
         

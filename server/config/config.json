@@ -1,10 +1,10 @@
 {
   "development": {
-    "username": "root",
-    "password": "",
-    "database": "dh_ihm_n",
+    "username": "hasina",
+    "password": "hasina235#",
+    "database": "db_ihm",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgresql"
   },
   "test": {
     "username": "root",

@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Chart from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
 import axios from 'axios';
 
 const ChartGraphique = () => {
+
+  const [totalParType, setTotalParType] = useState([]);
+
+  // useEffect(() => {
+  //   axios.get('http://localhost:3001/produits/byType').then((response) => {
+  //     setTotalParType(response.data);
+  //     console.log(response.data);
+  //   })
+  // })
 
     const data = {
         labels: ["viande", "oeuf", "lait"],
@@ -20,7 +29,7 @@ const ChartGraphique = () => {
                     "rgba(54, 162, 235, 1)",
                     "rgba(255, 206, 86, 1)",
                 ],
-                data: [2, 3, 10],
+                data: totalParType,
             },
         ],
     };

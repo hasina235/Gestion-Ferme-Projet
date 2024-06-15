@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react'
 import './produits.css';
 import '../../../../../../App.css';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 //icon
 import { IoMdAdd } from 'react-icons/io';
 import { MdOutlineUpdate, MdDelete } from 'react-icons/md';
 
 const Produits = () => {
+
 
   const [listProduits, setListesProduit] = useState([]);
 
@@ -17,6 +19,7 @@ const Produits = () => {
       console.log(response.data);
     })
   }, [])
+
   return (
     <div className='content'>
 
@@ -44,8 +47,8 @@ const Produits = () => {
                 <td key={produit.typeProduit}>{produit.typeProduit}</td>
                 <td key={produit.description}>{produit.description}</td>
                 <td key={produit.dateProduction}>{produit.dateProduction}</td>
-                <td><a href="#"><MdOutlineUpdate className="icon"/></a></td>
-                <td><a href="#"><MdDelete className="icon"/></a></td>
+                <td><Link to={`/produits/editProduits/${produit.id}`}><MdOutlineUpdate className="icon"/></Link></td>
+                <td><Link to="#"><MdDelete className="icon"/></Link></td>
               </tr>
             </tbody>
           ))}

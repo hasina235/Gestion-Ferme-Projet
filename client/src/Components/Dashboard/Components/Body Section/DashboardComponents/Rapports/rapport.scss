@@ -51,6 +51,14 @@
 
         .body{
             padding: 1rem 1rem;
+
+            span{
+                font-size: var(--h3FontSize);
+                margin-bottom: 1rem;
+            }
+            .type{
+                justify-content: space-between;
+            }
         }
     }
 

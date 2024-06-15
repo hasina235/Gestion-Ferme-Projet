@@ -1,5 +1,5 @@
 import axios from 'axios';
-import '../../../../../../App.css';
+import '../../../../../../../App.css';
 import './addProduits.css';
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
@@ -43,7 +43,14 @@ function AddProduits() {
                     <input type="text" onChange={(e) => setNomProduit(e.target.value)}/>
 
                     <label For="typeProduit">Type de Produit</label>
-                    <input type="text" onChange={(e) => setTypeProduit(e.target.value)}/>
+                    {/* <input type="text" onChange={(e) => setTypeProduit(e.target.value)}/> */}
+                    <select onChange={(e) => setTypeProduit(e.target.value)} >
+                      <option value=""></option>
+                      <option value="Lait" onSelect={(e) => setTypeProduit(e.target.value)}>Lait</option>
+                      <option value="Viande" onSelect={(e) => setTypeProduit(e.target.value)} >Viande</option>
+                      <option value="Oeufs" onSelect={(e) => setTypeProduit(e.target.value)} >Oeufs</option>
+                      <option value="Chair" onSelect={(e) => setTypeProduit(e.target.value)} >Chair</option>
+                    </select>
 
                     <label For="description">Description</label>
                     <input type="text" onChange={(e) => setDescription(e.target.value)}/>

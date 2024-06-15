@@ -48,6 +48,13 @@
 .contents .rapport-de-production .body {
   padding: 1rem 1rem;
 }
+.contents .rapport-de-production .body span {
+  font-size: var(--h3FontSize);
+  margin-bottom: 1rem;
+}
+.contents .rapport-de-production .body .type {
+  justify-content: space-between;
+}
 .contents .analyse-de-produit {
   width: 800px;
   height: 150px;

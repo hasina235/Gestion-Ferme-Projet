@@ -1,18 +1,39 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './rapport.css'
 import GenererPdf from './GenererPdf/GenererPdf';
+import axios from 'axios';
+import RappoortJournalier from './GenererPdf/RappoortJournalier';
 
 //utilities
 
 
-const data = [
-  { nomProduit: 'Lait', typeProduit: 'lait', description: 'lait de vache', dateProduction: '2024-06-13' },
-  { nomProduit: 'viande', typeProduit: 'viande', description: 'viande de porc', dateProduction: '2024-06-13' }
-];
+
+// const data = [
+//   { nomProduit: 'Lait', typeProduit: 'lait', description: 'lait de vache', dateProduction: '2024-06-13' },
+//   { nomProduit: 'viande', typeProduit: 'viande', description: 'viande de porc', dateProduction: '2024-06-13' }
+// ];
 
 
 
 const Rapports = () => {
+
+  const [listProduits, setListProduits] = useState([]);
+
+  const [listProduitsParMois, setListProduitsParMois] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:3001/produits').then((response) => {
+      setListProduits(response.data);
+      console.log(response.data);
+    })
+  }, []);
+
+  // useEffect(() => {
+  //   axios.get('http://localhost:3001/produits/groupByWeek').then((response) => {
+  //     setListProduitsParMois(response.data);
+  //     console.log(response.data);
+  //   })
+  // }, [])
 
 
   return (
@@ -31,9 +52,9 @@ const Rapports = () => {
         <div className="body">
           <span>Generer Rapport de Production</span>
           <div className="type">
-            <button className='btn'>Journalier</button>
-            <GenererPdf data={data}/>
-        </div>
+            <RappoortJournalier className="journalier" data={listProduits}/>
+            <GenererPdf data={listProduits}/>
+          </div>
         </div>
       </div>
 

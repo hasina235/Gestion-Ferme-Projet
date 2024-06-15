@@ -3,8 +3,8 @@ const router = express.Router();
 const { Animals } = require('../models');
 
 router.get('/', async (req, res) => {
-    const listOfAnimals = Animals.findAll({});
-    res.json(listOfAnimals);
+    const animals =await Animals.findAll({});
+    res.json(animals);
 });
 
 router.post('/', async (req, res) => {
@@ -14,23 +14,23 @@ router.post('/', async (req, res) => {
     res.json(animals);
 });
 
-router.put('/update/:idAnimal', async(req, res)=>{
+router.put('/update/:id', async(req, res)=>{
     const {nom, categorie} = req.body;
 
-    const idAnimal = req.params.idAnimal;
+    const id = req.params.id;
     await Animals.update({
         nom: nom,
         categorie: categorie
     },{
-        where: {idAnimal: idAnimal}
+        where: {id: id}
     });
     res.json("Animals updated successfylly");
 });
 
-router.delete('/delete/:idAnimal', async (req, res) => {
-    const idAnimal = req.params.idAnimal;
+router.delete('/delete/:id', async (req, res) => {
+    const id = req.params.id;
 
-    await Animals.destroy({where:{idAnimal: idAnimal}});
+    await Animals.destroy({where:{id: id}});
     res.json("Animals deleted successfully");
 });
 

@@ -33,7 +33,7 @@ const RappoortJournalier = ({data}) => {
         // Add Chapter Body
         let bodyText = '';
         data.forEach(product => {
-          bodyText += `Produit: ${product.nom}, Quantité: ${product.quantite}, Date de Récolte: ${product.date_recolte}\n`;
+          bodyText += `Produit: ${product.nomProduit}, type: ${product.typeProduit}, Description: ${product.description}, Date de Production: ${product.dateProduction}\n`;
         });
     
         const bodyLines = bodyText.split('\n');
@@ -46,11 +46,11 @@ const RappoortJournalier = ({data}) => {
         // Save the PDF
         const pdfBytes = await pdfDoc.save();
         const blob = new Blob([pdfBytes], { type: 'application/pdf' });
-        saveAs(blob, 'rapport_production.pdf');
+        saveAs(blob, 'rapport_production_journalier.pdf');
       };
   return (
     <div>
-      
+      <button onClick={rapportJournalier} className='btn'>Journalier</button>
     </div>
   )
 }

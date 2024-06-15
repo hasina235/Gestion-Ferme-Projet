@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './sidebar.css';
 
 import logo from '../../Assets/logo2.png';
@@ -30,35 +30,35 @@ const Sidebar = () => {
         <ul className="menuLists grid">
         {/*  */}
           <li className="listItem">
-            <a 
-              href="/" 
+            <Link 
+              to="/" 
               className={`menuLink flex ${active === '/' ? 'active' : ''}`}
               onClick={() => handleItemClick('/')}
             >
               <IoMdSpeedometer className='icon'/>
               <span className="smallText">Tableau de Bord</span>
-            </a>
+            </Link>
           </li>
 
           <li className="listItem">
-            <a 
-              href="/animals" 
+            <Link 
+              to="/animals" 
               className={`menuLink flex ${active === '/animals' ? 'active' : ''}`}
               onClick={() => handleItemClick('/animals')}
             >
               <GiPig className='icon'/>
               <span className="smallText">Gestion des animaux</span>
-            </a>
+            </Link>
           </li>
           <li className="listItem">
-            <a 
-              href="/produits" 
+            <Link 
+              to="/produits" 
               className={`menuLink flex ${active === '/produits' ? 'active' : ''}`}
               onClick={() => handleItemClick('/produits')}
             >
               <BsTrophy className='icon'/>
               <span className="smallText">Produits</span>
-            </a>
+            </Link>
           </li>
 
         </ul>
@@ -68,34 +68,34 @@ const Sidebar = () => {
         <h3 className="divTitle">PARAMETRES</h3>
         <ul className="menuLists grid">
           <li className="listItem">
-            <a 
-              href="/utilisateurs" 
+            <Link 
+              to="/utilisateurs" 
               className={`menuLink flex ${active === '/utilisateurs' ? 'active' : ''}`}
               onClick={() => handleItemClick('/utilisateurs')}
             >
               <FaUsers className='icon'/>
               <span className="smallText">Utilisateurs</span>
-            </a>
+            </Link>
           </li>
           <li className="listItem">
-            <a 
-              href="/rapports" 
+            <Link 
+              to="/rapports" 
               className={`menuLink flex ${active === '/rapports' ? 'active' : ''}`}
               onClick={() => handleItemClick('/rapports')}
             >
               <MdOutlineAnalytics className='icon'/>
               <span className="smallText">Rapport et analyse</span>
-            </a>
+            </Link>
           </li>
           <li className="listItem">
-            <a 
-              href="/support" 
+            <Link 
+              to="/support" 
               className={`menuLink flex ${active === '/support' ? 'active' : ''}`}
               onClick={() => handleItemClick('/support')}
             >
               <FcSupport className='icon'/>
               <span className="smallText">Support</span>
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

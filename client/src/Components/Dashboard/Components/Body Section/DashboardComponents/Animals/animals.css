@@ -61,7 +61,7 @@
 .content .table-visualisation-animals {
   width: 800px;
   height: 200px;
-  margin-top: 1rem;
+  margin-bottom: 1rem;
   background: var(--whiteColor);
   border-radius: 8px;
   overflow: hidden;
@@ -77,8 +77,16 @@
 .content .table-visualisation-animals .head h1 {
   font-size: var(--h2FontSize);
 }
-.content .table-visualisation-animals .card-visuel {
-  display: flex;
-  flex-direction: column;
-  padding-top: 3rem;
+.content .table-visualisation-animals .style {
+  width: 100%;
+}
+.content .table-visualisation-animals .style thead {
+  background: var(--tundraGray);
+  height: 25px;
+}
+.content .table-visualisation-animals .style .delete {
+  color: red;
+}
+.content .table-visualisation-animals .style .update {
+  color: rgb(220, 235, 9);
 }/*# sourceMappingURL=animals.css.map */
