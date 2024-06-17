@@ -87,7 +87,7 @@ const Sidebar = () => {
               <span className="smallText">Rapport et analyse</span>
             </Link>
           </li>
-          <li className="listItem">
+          {/* <li className="listItem">
             <Link 
               to="/support" 
               className={`menuLink flex ${active === '/support' ? 'active' : ''}`}
@@ -95,6 +95,16 @@ const Sidebar = () => {
             >
               <FcSupport className='icon'/>
               <span className="smallText">Support</span>
+            </Link>
+          </li> */}
+          <li className="listItem">
+            <Link 
+              to="/faq" 
+              className={`menuLink flex ${active === '/faq' ? 'active' : ''}`}
+              onClick={() => handleItemClick('/faq')}
+            >
+              <FcSupport className='icon'/>
+              <span className="smallText">FAQ</span>
             </Link>
           </li>
         </ul>
@@ -107,7 +117,7 @@ const Sidebar = () => {
           <div className="circle2"></div>
           <h3>Centre d'aide</h3>
           <p>Besoin d'aide sur Ferme., s'il vous plaît contactez-nous!</p>
-          <button className='btn'>Contacter</button>
+          <Link to={'/support'} className='btn'>Contacter</Link>
         </div>
       </div>
     </div>

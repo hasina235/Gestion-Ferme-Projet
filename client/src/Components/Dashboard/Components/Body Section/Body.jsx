@@ -14,6 +14,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import BodyGuard from './BodyGuard';
 import AddProduits from './DashboardComponents/Produits/addProduct/AddProduits';
 import EditProduct from './DashboardComponents/Produits/editProduct/EditProduct';
+import Faq from './DashboardComponents/Faq/Faq';
 
 
 const Body = () => {
@@ -21,12 +22,16 @@ const Body = () => {
     <div className='mainContent'>
       <Router>
         <Routes>
-            <Route path="/" element={<BodyGuard />} />
+            <Route
+               path="/"
+               element={<BodyGuard />} 
+            />
             <Route path="/animals" element={<Animals />} />
             <Route path="/produits" element={<Produits />} />
             <Route path="/utilisateurs" element={<Utilisateurs />} />
             <Route path="/rapports" element={<Rapports />} />
             <Route path="/support" element={<Supports />} />
+            <Route path="/faq" element={<Faq />} />
             <Route path='/produits/addProduit' element={<AddProduits />} />
             <Route path='/produits/editProduits/:id' element={<EditProduct />}/>
         </Routes>

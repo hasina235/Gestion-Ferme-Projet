@@ -55,6 +55,9 @@
 .contents .rapport-de-production .body .type {
   justify-content: space-between;
 }
+.contents .rapport-de-production .body .type .journalier {
+  margin: 0.5rem 0 0 0;
+}
 .contents .analyse-de-produit {
   width: 800px;
   height: 150px;
@@ -74,6 +77,9 @@
 .contents .analyse-de-produit .body {
   padding: 1rem 1rem;
 }
+.contents .analyse-de-produit .body .type button {
+  margin: 0 0.5rem 0 0;
+}
 .contents .Exportation-des-donnees {
   width: 800px;
   height: 150px;
@@ -92,4 +98,7 @@
 }
 .contents .Exportation-des-donnees .body {
   padding: 1rem 1rem;
+}
+.contents .Exportation-des-donnees .body .type button {
+  margin: 0.5rem 0 0 0;
 }/*# sourceMappingURL=rapport.css.map */

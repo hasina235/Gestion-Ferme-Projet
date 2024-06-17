@@ -3,6 +3,7 @@ import './rapport.css'
 import GenererPdf from './GenererPdf/GenererPdf';
 import axios from 'axios';
 import RappoortJournalier from './GenererPdf/RappoortJournalier';
+import GenererCsv from './GenererCSV/GenererCsv';
 
 //utilities
 
@@ -81,7 +82,7 @@ const Rapports = () => {
         <div className="body">
           <span>Exporter les Données</span>
           <div className="type">
-            <button className='btn'>Exporter en PDF</button>
+            <GenererCsv />
         </div>
         </div>
 

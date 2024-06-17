@@ -14,6 +14,7 @@ import Supports from './Components/Body Section/DashboardComponents/Supports/Sup
 import AddProduits from './Components/Body Section/DashboardComponents/Produits/addProduct/AddProduits';
 import EditProduct from './Components/Body Section/DashboardComponents/Produits/editProduct/EditProduct';
 import AddAnimals from './Components/Body Section/DashboardComponents/Animals/AddAnimals/AddAnimals';
+import Faq from './Components/Body Section/DashboardComponents/Faq/Faq';
 
 
 const Dashboard = () => {
@@ -29,6 +30,7 @@ const Dashboard = () => {
             <Route path="/utilisateurs" element={<Utilisateurs />} />
             <Route path="/rapports" element={<Rapports />} />
             <Route path="/support" element={<Supports />} />
+            <Route path="/faq" element={<Faq />} />
             <Route path='/produits/addProduit' element={<AddProduits />} />
             <Route path='/produits/editProduits/:id' element={<EditProduct />}/>
             <Route path='/animals/addAnimals' element={<AddAnimals />}/>

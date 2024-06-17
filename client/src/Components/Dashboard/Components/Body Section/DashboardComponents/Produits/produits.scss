@@ -47,4 +47,17 @@
             }
         }
     }
+
+    .pagination{
+        width: 100%;
+        height: auto;
+        background: var(--whiteColor);
+        display: flex;
+        padding: 0 45% 0 45%;
+
+        button:hover{
+            background: var(--hoverColor);
+            color: var(--blackColor);
+        }
+    }
   }

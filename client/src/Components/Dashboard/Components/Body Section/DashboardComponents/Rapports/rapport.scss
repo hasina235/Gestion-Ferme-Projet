@@ -58,6 +58,9 @@
             }
             .type{
                 justify-content: space-between;
+                .journalier{
+                    margin: .5rem 0 0 0;
+                }
             }
         }
     }
@@ -81,6 +84,11 @@
 
         .body{
             padding: 1rem 1rem;
+             .type{
+                button{
+                    margin: 0 .5rem 0 0 ;
+                }
+             }
         }
     }
 
@@ -104,6 +112,12 @@
 
         .body{
             padding: 1rem 1rem;
+
+            .type{
+                button{
+                    margin: .5rem 0 0 0 ;
+                }
+            }
         }
     }
   }

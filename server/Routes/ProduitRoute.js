@@ -3,11 +3,11 @@ const router = express.Router();
 const { Produits } = require('../models');
 const { literal } = require('sequelize');
 
-router.get('/', async (req, res) => {
-    const produits = await Produits.findAll({});
+// router.get('/', async (req, res) => {
+//     const produits = await Produits.findAll({});
 
-    res.json(produits);
-});
+//     res.json(produits);
+// });
 
 //produit par mois
 
@@ -30,6 +30,34 @@ router.get('/byType', async (req, res) => {
 
     res.json(listsProduits);
 })
+
+//les produits par pagination
+router.get('/', async (req, res) => {
+    // Parse page and limit from query parameters, default to 1 and 5 respectively
+    const page = parseInt(req.query.page, 10) || 1;
+    const limit = parseInt(req.query.limit, 10) || 5;
+    const offset = (page - 1) * limit;
+
+    try {
+        // Fetch data and total count from the database
+        const { count, rows } = await Produits.findAndCountAll({
+            limit,
+            offset,
+        });
+
+        // Send JSON response with pagination details and data
+        res.json({
+            totalPages: Math.ceil(count / limit),
+            currentPage: page,
+            produits: rows,
+        });
+    } catch (error) {
+        // Handle errors and send a 500 status code with an error message
+        console.error('Error fetching products:', error); // Improved error logging
+        res.status(500).json({ error: 'Une erreur est survenue lors de la récupération des produits' });
+    }
+});
+
 
 router.post('/', async (req, res) => {
     const produits = req.body;

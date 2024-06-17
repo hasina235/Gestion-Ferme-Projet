@@ -1,0 +1,29 @@
+:root {
+  --primaryColor: hsl(94, 59%, 35%);
+  --hoverColor: #bdf094;
+  --paleGreen: hsl(96, 75%, 89%);
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(0, 0%, 18%);
+  --textColor: hsl(240, 1%, 48%);
+  --greyText: rgb(190, 190, 190);
+  --bgColor: hsl(220, 10%, 94%);
+  --inputColor: hsl(330, 12%, 97%);
+  --biggestFontSize: 2.5rem;
+  --h1FontSize: 1.5rem;
+  --h2FontSize: 1.25rem;
+  --h3FontSize: 1rem;
+  --normalFontSize: .938rem;
+  --smallFontSize: .813rem;
+  --smallestFontSize: .75rem;
+}
+
+.contact-page h2 {
+  font-size: var(--h2FontSize);
+  margin: 0 0 1rem 0;
+}
+.contact-page .support {
+  margin: 0 0 0.5rem 0;
+}
+.contact-page h3 {
+  margin: 0 0 0.5rem 0;
+}/*# sourceMappingURL=contact.css.map */
